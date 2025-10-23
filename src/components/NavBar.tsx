@@ -1,22 +1,42 @@
+import { useRef } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
+import {CiGlobe } from "react-icons/ci";
+import { IoPersonOutline } from "react-icons/io5";
+
+
 
 function NavBar() {
+
+  const storeMenu = useRef< HTMLUListElement | null>(null);
+
+  const toggleStoreMenu = () =>{
+  storeMenu.current?.classList.toggle("hidden");
+  }
+
   return (
     <>
-        <div className="container bg-cyan-400 px-10 py-2.5 flex justify-between items-center gap-10">
-            <div id="logo" className="uppercase font-logo text-sm tracking-[0.25em]">veloretti</div>
+        <div className="container bg-cyan-100 text-gray-700 px-10 py-2.5 flex justify-between items-center gap-10">
+            <a href="/" id="logo" className="uppercase font-logo font-medium text-sm tracking-[0.25em]">
+              veloretti
+            </a>
             <nav className="grow">
-              <ul className="flex gap-5">
+              <ul className="flex items-center gap-5 capitalize">
                 <li>
                   <a href="#">home</a>
                 </li>
-                <li>
-                  <a href="#">store</a>
-                  <ul>
+                <li className="relative cursor-pointer" onClick={toggleStoreMenu}>
+                  <a className=" flex items-center gap-1 ">
+                    store
+                    <IoIosArrowDown className=" mt-1.5 text-lg cursor-pointer" />
+                    <IoIosArrowUp className=" mt-1.5 text-lg cursor-pointer hidden" />
+                  </a>
+                  <ul ref={storeMenu} className="hidden absolute">
                     <li>
-                      <a href="#">bikes</a>
+                      <a href="#bikes">bikes</a>
                     </li>
-                    <li>
-                      <a href="#">accessories</a>
+                    <li> {/* خليها باهتة اللى هو خلصت مثلا  */}
+                      <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
                     </li>
                   </ul>
                 </li>
@@ -25,10 +45,20 @@ function NavBar() {
                 </li>
               </ul>
             </nav>
-            <div>
-                <span>lang</span>
-                <span>profile</span>
-                <span>cart</span>
+            <div className="flex items-center gap-10 text-xl">
+                <span className="relative">
+                  <CiGlobe className="cursor-pointer"/>
+                  <ul className="absolute hidden">
+                    <li>EN</li>
+                    <li>AR</li>
+                  </ul>
+                </span>
+                <span>
+                  <IoPersonOutline className="cursor-pointer"/>
+                </span>
+                <span>
+                  <HiOutlineShoppingCart className="cursor-pointer"/>
+                </span>
             </div>
         </div>
     </>
