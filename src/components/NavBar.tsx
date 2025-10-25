@@ -9,9 +9,10 @@ import { IoPersonOutline } from "react-icons/io5";
 function NavBar() {
 
   const storeMenu = useRef< HTMLUListElement | null>(null);
+  const langMenu = useRef< HTMLUListElement | null>(null);
 
-  const toggleStoreMenu = () =>{
-  storeMenu.current?.classList.toggle("hidden");
+  const toggleMenu = (ref: React.RefObject<HTMLElement | null>) =>{
+  ref.current?.classList.toggle("hidden");
   }
 
   return (
@@ -25,7 +26,7 @@ function NavBar() {
                 <li>
                   <a href="#">home</a>
                 </li>
-                <li className="relative cursor-pointer" onClick={toggleStoreMenu}>
+                <li className="relative cursor-pointer" onClick={()=>{toggleMenu(storeMenu)}}>
                   <a className=" flex items-center gap-1 ">
                     store
                     <IoIosArrowDown className=" mt-1.5 text-lg cursor-pointer" />
@@ -46,9 +47,9 @@ function NavBar() {
               </ul>
             </nav>
             <div className="flex items-center gap-10 text-xl">
-                <span className="relative">
+                <span className="relative" onClick={()=>{toggleMenu(langMenu)}}>
                   <CiGlobe className="cursor-pointer"/>
-                  <ul className="absolute hidden">
+                  <ul ref={langMenu} className="absolute hidden">
                     <li>EN</li>
                     <li>AR</li>
                   </ul>
