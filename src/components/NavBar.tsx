@@ -46,11 +46,11 @@ function NavBar() {
                       <IoIosArrowUp className=" mt-1.5 text-lg cursor-pointer" />
                     </span>
                   </a>
-                  <ul ref={storeMenu} className="hidden absolute">
-                    <li>
+                  <ul ref={storeMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden">
+                    <li className="px-2 pt-2 pb-1 hover:bg-gray-200">
                       <a href="#bikes">bikes</a>
                     </li>
-                    <li> {/* خليها باهتة اللى هو خلصت مثلا  */}
+                    <li className="px-2 pb-2 pt-1 hover:bg-gray-200"> {/* خليها باهتة اللى هو خلصت مثلا  */}
                       <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
                     </li>
                   </ul>
@@ -71,9 +71,13 @@ function NavBar() {
                       <IoIosArrowUp className=" mt-1.5 text-sm cursor-pointer" />
                     </span>
                   </span>
-                  <ul ref={langMenu} className="absolute hidden">
-                    <li>EN</li>
-                    <li>AR</li>
+                  <ul ref={langMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden text-sm">
+                    <li className="px-2 pt-2 pb-1 hover:bg-gray-200 text-center">
+                      <a href="#English">English</a>
+                    </li>
+                    <li className="px-2 pb-2 pt-1 hover:bg-gray-200 text-center">
+                      <a href="#Arabic">العربية</a>
+                    </li>
                   </ul>
                 </span>
                 <span>
