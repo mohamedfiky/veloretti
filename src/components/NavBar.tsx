@@ -8,11 +8,21 @@ import { IoPersonOutline } from "react-icons/io5";
 
 function NavBar() {
 
-  const storeMenu = useRef< HTMLUListElement | null>(null);
-  const langMenu = useRef< HTMLUListElement | null>(null);
+  const storeMenu = useRef<HTMLUListElement | null>(null);
+  const storeUpArrow = useRef<HTMLSpanElement | null>(null);
+  const storeDownArrow = useRef<HTMLSpanElement | null>(null);
+  const langMenu = useRef<HTMLUListElement | null>(null);
+  const langUpArrow = useRef<HTMLSpanElement | null>(null);
+  const langDownArrow = useRef<HTMLSpanElement | null>(null);
 
-  const toggleMenu = (ref: React.RefObject<HTMLElement | null>) =>{
-  ref.current?.classList.toggle("hidden");
+
+
+  type RefEl = React.RefObject<HTMLElement | null>;
+
+  const toggleMenu = (menu: RefEl, arrUp: RefEl, arrDown: RefEl) =>{
+  menu.current?.classList.toggle("hidden");
+  arrUp.current?.classList.toggle("hidden");
+  arrDown.current?.classList.toggle("hidden");
   }
 
   return (
@@ -26,11 +36,15 @@ function NavBar() {
                 <li>
                   <a href="#">home</a>
                 </li>
-                <li className="relative cursor-pointer" onClick={()=>{toggleMenu(storeMenu)}}>
+                <li className="relative cursor-pointer" onClick={()=>{toggleMenu(storeMenu, storeDownArrow, storeUpArrow)}}>
                   <a className=" flex items-center gap-1 ">
                     store
-                    <IoIosArrowDown className=" mt-1.5 text-lg cursor-pointer" />
-                    <IoIosArrowUp className=" mt-1.5 text-lg cursor-pointer hidden" />
+                    <span ref={storeDownArrow}>
+                      <IoIosArrowDown className=" mt-1.5 text-lg cursor-pointer" />
+                    </span>
+                    <span ref={storeUpArrow} className="hidden">
+                      <IoIosArrowUp className=" mt-1.5 text-lg cursor-pointer" />
+                    </span>
                   </a>
                   <ul ref={storeMenu} className="hidden absolute">
                     <li>
@@ -47,8 +61,16 @@ function NavBar() {
               </ul>
             </nav>
             <div className="flex items-center gap-10 text-xl">
-                <span className="relative" onClick={()=>{toggleMenu(langMenu)}}>
-                  <CiGlobe className="cursor-pointer"/>
+                <span className="relative" onClick={()=>{toggleMenu(langMenu, langDownArrow, langUpArrow)}}>
+                  <span className="flex items-center gap-0.5">
+                    <CiGlobe className="cursor-pointer"/>
+                    <span ref={langDownArrow}>
+                        <IoIosArrowDown className=" mt-1.5 text-sm cursor-pointer" />
+                    </span>
+                    <span ref={langUpArrow} className="hidden">
+                      <IoIosArrowUp className=" mt-1.5 text-sm cursor-pointer" />
+                    </span>
+                  </span>
                   <ul ref={langMenu} className="absolute hidden">
                     <li>EN</li>
                     <li>AR</li>
