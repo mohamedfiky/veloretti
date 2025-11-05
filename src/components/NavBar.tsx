@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { useRef } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
@@ -34,7 +35,7 @@ function NavBar() {
             <nav className="grow">
               <ul className="flex items-center gap-5 capitalize">
                 <li>
-                  <a href="#">home</a>
+                  <NavLink to="/">home</NavLink>
                 </li>
                 <li className="relative cursor-pointer" onClick={()=>{toggleMenu(storeMenu, storeDownArrow, storeUpArrow)}}>
                   <a className=" flex items-center gap-1 ">
@@ -48,7 +49,7 @@ function NavBar() {
                   </a>
                   <ul ref={storeMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden">
                     <li className="px-2 pt-2 pb-1 hover:bg-gray-200">
-                      <a href="#bikes">bikes</a>
+                      <NavLink to="/store/bikes">bikes</NavLink>
                     </li>
                     <li className="px-2 pb-2 pt-1 hover:bg-gray-200"> {/* خليها باهتة اللى هو خلصت مثلا  */}
                       <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
@@ -56,7 +57,7 @@ function NavBar() {
                   </ul>
                 </li>
                 <li>
-                  <a href="#">join the race</a>
+                  <NavLink to="/race">join the race</NavLink>
                 </li>
               </ul>
             </nav>
