@@ -2,9 +2,9 @@ import {NavLink, useLocation } from "react-router";
 import { useRef } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-type RefEl = React.RefObject<HTMLElement | null>;
+// type RefEl = React.RefObject<HTMLElement | null>;
 
-function Nav({toggleMenu} : {toggleMenu : (menu: RefEl, arrUp: RefEl, arrDown: RefEl )=> void}) {
+function Nav() {
 
   const storeMenu = useRef<HTMLUListElement | null>(null);
   const storeUpArrow = useRef<HTMLSpanElement | null>(null);
@@ -17,10 +17,10 @@ function Nav({toggleMenu} : {toggleMenu : (menu: RefEl, arrUp: RefEl, arrDown: R
     <nav className="grow">
         <ul className="flex items-center gap-5 capitalize">
         <li>
-            <NavLink className={({ isActive }) => `${isActive ? "font-bold" : ""}`} to="/">home</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/">home</NavLink>
         </li>
-        <li className="relative cursor-pointer" onClick={()=>{toggleMenu(storeMenu, storeDownArrow, storeUpArrow)}}>
-            <a className= {`${isStoreActive ? "font-bold" : ""} flex items-center gap-1`}>
+        <li className="relative cursor-pointer" /* onClick={()=>{toggleMenu(storeMenu, storeDownArrow, storeUpArrow)}} */>
+            <a className= {`${isStoreActive ? "font-semibold" : ""} flex items-center gap-1`}>
             store
             <span ref={storeDownArrow}>
                 <IoIosArrowDown className=" mt-1.5 text-lg cursor-pointer" />
@@ -29,7 +29,9 @@ function Nav({toggleMenu} : {toggleMenu : (menu: RefEl, arrUp: RefEl, arrDown: R
                 <IoIosArrowUp className=" mt-1.5 text-lg cursor-pointer" />
             </span>
             </a>
-            <ul ref={storeMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden">
+
+
+            <ul ref={storeMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden shadow-xl">
             <li className="px-2 pt-2 pb-1 hover:bg-gray-200">
                 <NavLink className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/store/bikes">bikes</NavLink>
             </li>
@@ -37,9 +39,11 @@ function Nav({toggleMenu} : {toggleMenu : (menu: RefEl, arrUp: RefEl, arrDown: R
                 <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
             </li>
             </ul>
+
+
         </li>
         <li>
-            <NavLink className={({ isActive }) => `${isActive ? "font-bold" : ""}`} to="/race">join the race</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/race">join the race</NavLink>
         </li>
         </ul>
     </nav>    

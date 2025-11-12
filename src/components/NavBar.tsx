@@ -4,13 +4,6 @@ import Langs from "./Langs";
 import Profile from "./Profile";
 import Cart from "./Cart";
 
-type RefEl = React.RefObject<HTMLElement | null>;
-
-const toggleMenu = (menu: RefEl, arrUp: RefEl, arrDown: RefEl) =>{
-menu.current?.classList.toggle("hidden");
-arrUp.current?.classList.toggle("hidden");
-arrDown.current?.classList.toggle("hidden");
-}
 
 function NavBar() {
 
@@ -18,9 +11,9 @@ function NavBar() {
     <div className="container bg-cyan-100 text-gray-700 px-10 py-2.5 flex justify-between items-center gap-10">
       
       <Logo />
-      <Nav toggleMenu={toggleMenu} />
+      <Nav />
       <div className="flex items-center gap-10 text-xl">
-        <Langs toggleMenu={toggleMenu} />
+        <Langs />
         <Profile />
         <Cart />
       </div>
