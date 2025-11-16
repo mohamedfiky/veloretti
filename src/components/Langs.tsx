@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { CiGlobe } from "react-icons/ci";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -9,7 +9,7 @@ type RefEl = React.RefObject<HTMLElement | null>;
 const toggleMenu = (menu: RefEl, arrowUp: RefEl, arrowDown: RefEl) =>{
 
 // That isn't the React way ...
-// You should use useState hook instead of  this ".classList" method.
+// You should use useState hook instead of this ".classList.toggle()" method.
 // See the React way on "Nav.tsx" component. 
     
     menu.current?.classList.toggle("hidden");
@@ -20,13 +20,31 @@ const toggleMenu = (menu: RefEl, arrowUp: RefEl, arrowDown: RefEl) =>{
 function Langs() {
 
   const langMenu = useRef<HTMLUListElement | null>(null);
+  const menuContainer = useRef<HTMLDivElement | null>(null);
   const langUpArrow = useRef<HTMLSpanElement | null>(null);
   const langDownArrow = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+  
+          const handleClickOutside = (e: MouseEvent) => {
+              if (!menuContainer.current?.contains(e.target as Node)){
+                if (!langMenu.current?.classList.contains("hidden")) {
+                toggleMenu(langMenu, langDownArrow, langUpArrow);
+                }
+              } 
+          };
+  
+          document.addEventListener("mousedown", handleClickOutside);
+          return () => document.removeEventListener("mousedown", handleClickOutside);
+  
+          // see if it works also on "touch" on mobiles
+          
+      }, []);
 
 
 
   return (
-    <div className="relative" onClick={()=>{toggleMenu(langMenu, langDownArrow, langUpArrow)}}>
+    <div ref={menuContainer} className="relative" onClick={()=>{toggleMenu(langMenu, langDownArrow, langUpArrow)}}>
         <span className="flex items-center gap-0.5">
             <CiGlobe className="cursor-pointer"/>
             <span ref={langDownArrow}>
