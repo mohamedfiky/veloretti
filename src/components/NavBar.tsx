@@ -3,20 +3,22 @@ import Nav from "./Nav";
 import Langs from "./Langs";
 import Profile from "./Profile";
 import Cart from "./Cart";
+import MobileMenu from "./MobileMenu";
 
 
 function NavBar() {
 
   return (
-    <div className="container bg-cyan-100 text-gray-700 px-10 py-2.5 flex justify-between items-center gap-10">
+    <div className="relative bg-cyan-100 text-gray-700 px-10 py-2.5 flex justify-between items-center gap-10">
       
       <Logo />
       <Nav />
-      <div className="flex items-center gap-10 text-xl">
+      <div className="hidden md:flex items-center gap-10 text-xl">
         <Langs />
         <Profile />
         <Cart />
       </div>
+      <MobileMenu />
       
     </div>
 

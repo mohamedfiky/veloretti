@@ -19,9 +19,14 @@ function Nav() {
             } 
         };
 
+        
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
-
+        
+        // "mousedown" not "click" because some limitation related to 
+        // react dealing and ordering events so
+        // بلاش وجع دماغ 
+        
         // see if it works also on "touch" on mobiles
         
     }, []);
@@ -30,7 +35,7 @@ function Nav() {
     const isStoreActive = location.pathname.startsWith("/store");
 
   return (
-    <nav className="grow">
+    <nav className="grow hidden md:block">
         <ul className="flex items-center gap-5 capitalize">
         <li>
             <NavLink className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/">home</NavLink>
