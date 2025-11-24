@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store/bikes" element={<BikesStore />} />
-        <Route path="/race" element={<JoinTheRace />} />
+        <Route path="/join-the-race" element={<JoinTheRace />} />
         <Route path="*" element={<NotFound_404 />} />
       </Routes>
     </BrowserRouter>
