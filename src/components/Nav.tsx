@@ -9,6 +9,11 @@ function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const menuContainer = useRef<HTMLLIElement | null>(null);
+    const bikesNavLink = useRef<HTMLAnchorElement | null>(null);
+
+    const handleBikesParentLiClick = ()=> {
+        bikesNavLink.current?.click();
+    }
 
 
     useEffect(() => {
@@ -57,11 +62,11 @@ function Nav() {
                 </a>
 
                 {isMenuOpen &&  (
-                    <ul className="absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden shadow-xl">
-                        <li className="px-2 pt-2 pb-1 hover:bg-gray-200">
-                            <NavLink className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/store/bikes">bikes</NavLink>
+                    <ul className="absolute top-9 -left-1/3 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu">
+                        <li className="px-2 pt-2 pb-1 hover:bg-gray-200" onClick={()=>{handleBikesParentLiClick()}}>
+                            <NavLink ref={bikesNavLink} className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/store/bikes">bikes</NavLink>
                         </li>
-                        <li className="px-2 pb-2 pt-1 hover:bg-gray-200">
+                        <li className="px-2 pb-2 pt-1 hover:bg-gray-200 cursor-not-allowed">
                             <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
                         </li>
                     </ul>

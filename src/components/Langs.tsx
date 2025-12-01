@@ -54,7 +54,7 @@ function Langs() {
                 <IoIosArrowUp className=" mt-1.5 text-sm cursor-pointer" />
             </span>
         </span>
-        <ul ref={langMenu} className="hidden absolute top-9 -left-1/3 border border-gray-700 rounded-lg overflow-hidden shadow-xl text-sm">
+        <ul ref={langMenu} className="hidden absolute top-8.5 -left-1/3 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu text-sm">
             <li className="px-2 pt-2 pb-1 hover:bg-gray-200 text-center">
                 <a href="#English">English</a>
             </li>
