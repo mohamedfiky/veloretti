@@ -55,10 +55,10 @@ function Langs() {
             </span>
         </span>
         <ul ref={langMenu} className="hidden absolute top-8.5 -left-1/3 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu text-sm">
-            <li className="px-2 pt-2 pb-1 hover:bg-gray-200 text-center">
+            <li className="px-2 pt-2 pb-1 hover:bg-light-beige text-center">
                 <a href="#English">English</a>
             </li>
-            <li className="px-2 pb-2 pt-1 hover:bg-gray-200 text-center">
+            <li className="px-2 pb-2 pt-1 hover:bg-light-beige text-center">
                 <a href="#Arabic">العربية</a>
             </li>
         </ul>

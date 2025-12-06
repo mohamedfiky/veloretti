@@ -63,10 +63,10 @@ function Nav() {
 
                 {isMenuOpen &&  (
                     <ul className="absolute top-9 -left-1/3 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu">
-                        <li className="px-2 pt-2 pb-1 hover:bg-gray-200" onClick={()=>{handleBikesParentLiClick()}}>
+                        <li className="px-2 pt-2 pb-1 hover:bg-light-beige" onClick={()=>{handleBikesParentLiClick()}}>
                             <NavLink ref={bikesNavLink} className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/store/bikes">bikes</NavLink>
                         </li>
-                        <li className="px-2 pb-2 pt-1 hover:bg-gray-200 cursor-not-allowed">
+                        <li className="px-2 pb-2 pt-1 hover:bg-light-beige cursor-not-allowed">
                             <a className=" opacity-70 line-through cursor-not-allowed">accessories</a>
                         </li>
                     </ul>

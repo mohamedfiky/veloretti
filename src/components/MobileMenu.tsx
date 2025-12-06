@@ -32,7 +32,7 @@ function MobileMenu() {
         </div>
 
         {isMenuOpened && (
-            <ul className="absolute bg-gray-700 text-white px-10 py-4 inset-x-0 top-12 flex flex-col gap-4 capitalize">
+            <ul className="absolute bg-dark-beige text-white px-10 py-4 inset-x-0 top-12 flex flex-col gap-4 capitalize">
                 <li>
                     <NavLink className={({ isActive }) => `${isActive ? "font-bold" : ""}`} to="/" onClick={()=>{closeMenu()}}>home</NavLink>
                 </li>
@@ -68,7 +68,7 @@ function MobileMenu() {
                     <NavLink className={({ isActive }) => `${isActive ? "font-bold" : ""}`} to="/join-the-race" onClick={()=>{closeMenu()}}>join the race</NavLink>
                 </li>
 
-                <hr className=" text-gray-600 w-full sm:w-2/3"/>
+                <hr className=" text-beige w-full sm:w-2/3"/>
 
                 <div onClick={()=>{setIsLangsMenuOpened(!isLangsMenuOpened)}}>
                     <span className="flex items-center gap-0.5">
@@ -97,13 +97,13 @@ function MobileMenu() {
                     )}
                 </div>
 
-                <hr className=" text-gray-600 w-full sm:w-2/3"/>
+                <hr className=" text-beige w-full sm:w-2/3"/>
 
                 <div>
                     <IoPersonOutline className="cursor-pointer text-xl"/>
                 </div>
 
-                <hr className=" text-gray-600 w-full sm:w-2/3"/>
+                <hr className=" text-beige w-full sm:w-2/3"/>
 
                 <div>
                     <HiOutlineShoppingCart className="cursor-pointer text-xl"/>
