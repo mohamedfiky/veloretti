@@ -32,7 +32,7 @@ function MobileMenu() {
         </div>
 
         {isMenuOpened && (
-            <ul className="absolute bg-dark-beige text-white px-10 py-4 inset-x-0 top-12 flex flex-col gap-4 capitalize">
+            <ul className="absolute inset-x-0 top-12 z-10 bg-dark-beige text-white px-10 py-4 flex flex-col gap-4 capitalize">
                 <li>
                     <NavLink className={({ isActive }) => `${isActive ? "font-bold" : ""}`} to="/" onClick={()=>{closeMenu()}}>home</NavLink>
                 </li>

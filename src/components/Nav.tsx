@@ -62,7 +62,7 @@ function Nav() {
                 </a>
 
                 {isMenuOpen &&  (
-                    <ul className="absolute top-9 -left-1/3 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu">
+                    <ul className="absolute top-9 -left-1/3 z-10 border bg-white border-gray-700 rounded-lg overflow-hidden shadow-menu">
                         <li className="px-2 pt-2 pb-1 hover:bg-light-beige" onClick={()=>{handleBikesParentLiClick()}}>
                             <NavLink ref={bikesNavLink} className={({ isActive }) => `${isActive ? "font-semibold" : ""}`} to="/store/bikes">bikes</NavLink>
                         </li>
