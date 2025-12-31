@@ -6,7 +6,7 @@ function Hero() {
       <div className="w-full sm:w-3/4 h-full m-auto">
         <img src={heroImage} className=" w-full h-full object-contain" />
       </div>
-      <div className=" absolute top-1/2 -translate-y-1/2 px-10 text-white font-main space-y-1">
+      <div className=" absolute top-1/2 -translate-y-1/2 px-5 sm:px-10 text-white font-main space-y-1">
         <h1 className="uppercase">Veloretti Business</h1>
         <h2 className=" capitalize text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-semibold">A bike to keep you fit and healthy.</h2>
       </div>

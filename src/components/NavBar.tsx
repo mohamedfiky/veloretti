@@ -9,7 +9,7 @@ import MobileMenu from "./MobileMenu";
 function NavBar() {
 
   return (
-    <div className="relative text-gray-700 px-10 py-2.5 flex justify-between items-center gap-10">
+    <div className="relative text-gray-700 px-5 sm:px-10 py-2.5 flex justify-between items-center gap-10">
       
       <Logo />
       <Nav />
