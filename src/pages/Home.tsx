@@ -1,9 +1,9 @@
 import Hero from "../components/Hero";
 import Image_Text from "../components/Image_Text";
-import img_txt_1 from "../assets/images/img-text-1.jpg" ;
-import img_txt_2 from "../assets/images/img-text-2.jpg" ;
-import img_txt_3 from "../assets/images/img-text-3.jpg" ;
-
+import img_txt_1 from "../assets/images/img-text-1.jpg";
+import img_txt_2 from "../assets/images/img-text-2.jpg";
+import img_txt_3 from "../assets/images/img-text-3.jpg";
+import { FaCircle } from "react-icons/fa";
 
 function Home() {
   return (
@@ -33,7 +33,21 @@ function Home() {
       <Image_Text imgLeft={false} imgSrc={img_txt_3}>
         <div className="lg:w-1/2 text-center lg:text-left text-gray-700 space-y-4">
           <h2 className="text-3xl sm:text-4xl leading-none font-semibold font-main">How it works</h2>
-          
+          <ul>
+            <li className="flex items-start gap-3">
+              {/* <FaCircle className="text-5xl text-gray-200 flex items-start"/> */}
+              <span className="shrink-0 w-6 h-7 rounded-[26px] bg-gray-200"></span>
+              <div>
+                <h3 className="text-lg sm:text-base font-semibold font-main mb-2">Register your company</h3>
+                <p className="w-4/5 text-sm mx-auto lg:mx-0 text-gray-400" >Fill in our registration form with your company details. After
+                   your registration, our leasing partner will do a credit check. You
+                   will hear whether your application has been approved within 24
+                   hours.
+                </p>
+              </div>
+            </li>
+
+          </ul>
         </div>
       </Image_Text>
 
