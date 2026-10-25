@@ -15,8 +15,8 @@ function NavBar() {
       <Nav />
       <div className="hidden md:flex items-center gap-10 text-xl">
         <Langs />
-        <Profile />
         <Cart />
+        <Profile />
       </div>
       <MobileMenu />
       

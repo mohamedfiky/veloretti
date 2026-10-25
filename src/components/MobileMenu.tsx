@@ -100,13 +100,14 @@ function MobileMenu() {
                 <hr className=" text-beige w-full sm:w-2/3"/>
 
                 <div>
-                    <IoPersonOutline className="cursor-pointer text-xl"/>
+                    <HiOutlineShoppingCart className="cursor-pointer text-xl"/>
+                    
                 </div>
 
                 <hr className=" text-beige w-full sm:w-2/3"/>
 
                 <div>
-                    <HiOutlineShoppingCart className="cursor-pointer text-xl"/>
+                    <IoPersonOutline className="cursor-pointer text-xl"/>
                 </div>
 
             </ul>
