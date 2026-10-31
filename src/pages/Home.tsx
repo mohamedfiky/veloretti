@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Image_Text from "../components/Image_Text";
+import Slider from "../components/Slider";
 import img_txt_1 from "../assets/images/img-text-1.jpg";
 import img_txt_2 from "../assets/images/img-text-2.jpg";
 import img_txt_3 from "../assets/images/img-text-3.jpg";
@@ -78,6 +79,14 @@ function Home() {
           </ul>
         </div>
       </Image_Text>
+
+      <section className="slider-section px-5 sm:px-10 py-10 lg:py-20 flex items-center justify-between gap-10 lg:gap-20 flex-col lg:flex-row">
+        <div className=" slider w-full md:w-3/4 lg:w-1/2">
+
+          <Slider />
+        </div>
+        <div className=" slider w-full md:w-3/4 lg:w-1/2">Second Slider</div>
+      </section>
 
       <div className="h-[1000px] bg-cyan-700"></div>
 
