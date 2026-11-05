@@ -24,7 +24,7 @@ const Slider = () => {
     >
       <SwiperSlide>
         <div className="h-[500px] bg-[#007595]">
-          <img src={Slider_1_1} className=" w-9/12 h-full object-contain mx-auto" />
+          <img src={Slider_1_1} className=" w-9/12 h-full object-contain mx-auto " />
         </div>
       </SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
