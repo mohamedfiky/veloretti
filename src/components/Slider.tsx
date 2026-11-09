@@ -10,6 +10,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+const slides = [
+  {
+    id:1,
+    title: "",
+    title_prefix: "",
+    price: "",
+    price_info: "",
+    image:"",
+    bullet_color_1 : "",
+    bullet_color_2 : "",
+  },
+]
+
 const Slider = () => {
   return (
     <Swiper
